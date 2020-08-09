@@ -1,0 +1,30 @@
+body {
+    background-image: url(/static/images/streets.jpg);
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  #welcome {
+      width: fit-content;
+  }
+
+
+.container {
+    background-color: wheat;
+    justify-content: center;
+    width: 25%;
+    margin-top: 5%;
+    border-radius: 15px;
+    opacity: 80%;
+}
+
+.field, .greeting {
+    font-family: 'Teko', sans-serif;
+    font-size: 22px;
+    
+}

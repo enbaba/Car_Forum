@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    {% load static %}
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="{% static 'about/assets/css/noscript.css' %}"></noscript>
+    <link rel="stylesheet" type="text/css" href="{% static 'about/assets/css/main.css' %}">
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <!-- Intro -->
+        <div id="intro">
+            <img src="/static/images/logo.png" alt="logo" class="logo" style="width:400px;height:400px;">
+            <p>Out with the new, and in with the old.</p>
+
+        </div>
+
+        <!-- Header -->
+
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="icons">
+                <li><a href="https://www.twitter.com" class="icon brands fa-twitter"><span
+                            class="label">Twitter</span></a></li>
+                <li><a href="https://www.instagram.com" target="_blank" class="icon brands fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="{%url 'dashboard' %}">Home</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Featured Post -->
+            <article class="post featured">
+                <header class="major">
+                    <span class="date">
+                        <script>
+                            document.write(new Date().toLocaleDateString());
+                        </script>
+                    </span>
+                    <h2><a href="#">Jankuruma<br />
+                        </a></h2>
+                    <p>What does "Jankuruma" mean exactly? pretty much nothing. To tell you the truth, its two words
+                        mashed together. "Janku" that means junk in japanese. And "Kuruma" which means car. If you are
+                        an enthusiast of old cars and still know how to drive a manual transmission this is the place
+                        for you!</p>
+                    <p>My name is Keith and I have had a passion for older things in general but to see an older car on
+                        the road was like looking into a time machine. Back when things were a whole lot simpler. And
+                        COOLER! </p>
+                </header>
+                <a href="#" class="image main"><img src="/static/images/jdmlegends.jpg" alt="jdm" /></a>
+                <h2><a href="#">What makes something Jankuruma worthy?<br />Check out some examples below!<br />
+                    </a></h2>
+            </article>
+
+            <!-- Posts -->
+            <section class="posts">
+                <article>
+                    <header>
+                        <h2><a href="#">Digital<br />
+                                Clusters</a></h2>
+                    </header>
+                    <a href="https://www.youtube.com/watch?v=xGmNuuoyiYQ" target="_blank" class="image fit"><img
+                            src="/static/images/digitalcluster.jpg" alt="digitalcluster" /></a>
+                    <!-- <p>description here</p> -->
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="#">Pop-Up <br />
+                                Headlights</a></h2>
+                    </header>
+                    <a href="https://www.youtube.com/watch?v=mfa2islRKwM" target="_blank" class="image fit"><img
+                            src="/static/images/lambo.jpg" alt="lambo" /></a>
+                    <!-- <p>description here</p> -->
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="#">Interiors<br />
+                                like this!</a></h2>
+                    </header>
+                    <a href="https://www.youtube.com/watch?v=wRZ68jZzo98" target="_blank" class="image fit"><img
+                            src="/static/images/cressida.jpg" alt="cressida" /></a>
+                    <!-- <p>description here</p> -->
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="#">Manual<br />
+                                Transmissions</a></h2>
+                    </header>
+                    <a href="https://www.youtube.com/watch?v=h50yIRZzPGU" target="_blank" class="image fit"><img
+                            src="/static/images/manual.jpg" alt="manualtrans" /></a>
+                    <!-- <p>description here</p> -->
+                </article>
+                <!-- <article>
+                    <header>
+                        <span class="date">#</span>
+                        <h2><a href="#">#<br />
+                                #</a></h2>
+                    </header>
+                    <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                    <p>description</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button">#</a></li>
+                    </ul>
+                </article> -->
+            </section>
+            <p>Most important, its just about the culture and to preserve the past. The purpose of this is to build a
+                community that is into the golden era of modern vehicles. And to share the passion for them. </p>
+            <p><img src="/static/images/logo.png" alt="logo" class="logo" style="width:100px;height:100px;">Contact us!
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                {% for message in messages %}
+                {% if 'nope' in message.extra_tags %}
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </form>
+            </section>
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p>1234 cars are great st<br />
+                        Seattle, WA 00000-0000</p>
+                </section>
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">(800) 123-4567</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">Support@Jankuruma.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.twitter.com" target="_blank" class="icon brands alt fa-twitter"><span
+                                    class="label">Twitter</span></a></li>
+                        <li><a href="https://www.facebook.com" target="_blank"
+                                class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
+                        </li>
+                        <li><a href="https://www.instagram.com" target="_blank"
+                                class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+                        </li>
+
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Jankuruma 2020</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'about/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'about/assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'about/assets/js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'about/assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'about/assets/js/util.js' %}"></script>
+    <script src="{% static 'about/assets/js/main.js' %}"></script>
+</body>
+
+</html>
