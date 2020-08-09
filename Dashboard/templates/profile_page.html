@@ -58,7 +58,7 @@
 
 
 <div class="card">
-{%if len.user.profile_pic > 0 %}
+{%if len.user.profile_pic < 0 %}
   <img src="{{user.profile_pic}}" alt="me" style="width:100%">
 {% else %}
 <img src="/static/images/profile_default.png" alt="me" style="width:100%">

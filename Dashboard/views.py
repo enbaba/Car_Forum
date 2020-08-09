@@ -122,15 +122,6 @@ def add_like(request, id):
     liked_message.user_likes.add(user_liking)
     return redirect('/vroom/message_board')
 
-# # EDITS A PROFILE 
-# def edit_profile(request, id):
-#     edit_user = User.objects.get(id=id)
-#     edit_user.username = request.POST['username']
-#     edit_user.car = request.POST['car']
-#     edit_user.email = request.POST['email']
-#     edit_user.save()
-#     return redirect(f'/vroom/user_profile/{id}')
-
 # CONTACT FORM INFO FOR ADMIN VIEWING
 def contact(request):
     errors = ContactUser.objects.validate(request.POST)
@@ -142,49 +133,7 @@ def contact(request):
         ContactUser.objects.create(name=request.POST['name'], email=request.POST['email'], message=request.POST['message'])
     return redirect('/vroom/about')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# you are working on the actual update and upload form now.
-# working code below 
-
-
-
-# UPLOAD FILE 
-
-
-# def uploadfilepage(request,id):
-#     context = {
-#             'user': User.objects.get(id=request.session['user_id']),
-            
-#         }
-#     return render(request, 'uploadfile.html',context)
-
-
-
-# def upload(request,id):
-#     if request.method == "POST":
-        
-     
-#         context = {
-#             "url" : url,
-#             "curr_user": curr_user,
-#         }
-        
-#     return render(request, 'uploadfile.html',context)
-
-
+# EDITS USER PROFILE 
 def edit_profile(request, id):
     curr_user = User.objects.get(id=id)
     curr_user.username = request.POST['username']

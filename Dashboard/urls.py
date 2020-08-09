@@ -19,9 +19,5 @@ urlpatterns = [
    path('contact/', views.contact, name="contact"),
    
    
-   # FILE UPLOAD PATHS
-   
-   # path('uploadfilepage/<int:id>', views.uploadfilepage, name="uploadfilepage"),
-   # path('upload/<int:id>', views.upload, name="upload"),
     
 ]
